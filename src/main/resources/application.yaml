@@ -1,0 +1,29 @@
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 60MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/datastructure?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  logging:
+    level:
+      cn.episooo: debug
+    file:
+      path: log/dataStructureLog.log
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java,src/main/public/**,src/main/resources/**,src/main/static/** #重启目录
+server:
+  port: 8080
+  servlet:
+    context-path: /

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta fileName="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/globle.css">
+    <link rel="stylesheet" href="/css/element.css">
+    <script src="/js/axios.js"></script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/element.js"></script>
+    <style>
+      .el-header{
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+  <div id="app">
+    <el-container style="height: 100%;">
+      <el-header>
+        <div>content</div>
+        <el-button type="info" @click="logout">退出</el-button>
+      </el-header>
+      <el-container>
+        <el-aside>
+          <!-- 侧边栏 -->
+          <el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @open="handleOpen"
+        @close="handleClose">
+        <el-menu-item index="1">
+          <i class="el-icon-menu"></i>
+          <span slot="title">班级管理</span>
+        </el-menu-item>
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">课程管理</span>
+        </el-menu-item>
+        <el-menu-item index="3">
+          <i class="el-icon-document"></i>
+          <span slot="title">题库管理</span>
+        </el-menu-item>
+        <el-menu-item index="4">
+          <i class="el-icon-setting"></i>
+          <span slot="title">试卷管理</span>
+        </el-menu-item>
+        <el-menu-item index="5">
+          <i class="el-icon-setting"></i>
+          <span slot="title">留言</span>
+        </el-menu-item>
+      </el-menu>
+        </el-aside>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
+  </div>
+</body>
+
+<script>
+// new Vue().$mount('#app');
+var Main = {
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
+}
+var app = new Vue({
+  methods:{
+    logout(){
+      console.log("logout");
+    },
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
+})
+app.$mount('#app');
+// var app = Vue.extend(Main)
+// new app().$mount('#app')
+// export default {
+//     methods: {
+//       handleOpen(key, keyPath) {
+//         console.log(key, keyPath);
+//       },
+//       handleClose(key, keyPath) {
+//         console.log(key, keyPath);
+//       }
+//     }
+//   }
+    </script>
+</html>
